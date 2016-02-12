@@ -14,7 +14,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <jvm.sdk.version>1.0.0-M26</jvm.sdk.version>
+        <jvm.sdk.version>1.0.0-RC1</jvm.sdk.version>
     </properties>
 
     <build>
@@ -52,19 +52,19 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.sphere.sdk.jvm</groupId>
-            <artifactId>sphere-models</artifactId>
+            <groupId>com.commercetools.sdk.jvm.core</groupId>
+            <artifactId>commercetools-models</artifactId>
             <version>${jvm.sdk.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.sphere.sdk.jvm</groupId>
-            <artifactId>sphere-convenience</artifactId>
+            <groupId>com.commercetools.sdk.jvm.core</groupId>
+            <artifactId>commercetools-convenience</artifactId>
             <version>${jvm.sdk.version}</version>
         </dependency>
         <dependency>
             <!-- important that this is in the test scope -->
-            <groupId>io.sphere.sdk.jvm</groupId>
-            <artifactId>sphere-java-client</artifactId>
+            <groupId>com.commercetools.sdk.jvm.core</groupId>
+            <artifactId>commercetools-java-client</artifactId>
             <version>${jvm.sdk.version}</version>
             <scope>test</scope>
         </dependency>

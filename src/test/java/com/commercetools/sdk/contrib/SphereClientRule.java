@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.TimeUnit;
@@ -34,6 +35,11 @@ public final class SphereClientRule extends ExternalResource implements Blocking
     @Override
     public <T> T executeBlocking(final SphereRequest<T> sphereRequest, final long l, final TimeUnit timeUnit) {
         return client.executeBlocking(sphereRequest, l, timeUnit);
+    }
+
+    @Override
+    public <T> T executeBlocking(final SphereRequest<T> sphereRequest, final Duration duration) {
+        return client.executeBlocking(sphereRequest, duration);
     }
 
     @Override
