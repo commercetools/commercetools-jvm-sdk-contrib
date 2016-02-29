@@ -3,7 +3,7 @@
 
     <groupId>com.commercetools.sdk.jvm.contrib</groupId>
     <artifactId>commercetools-contrib</artifactId>
-    <version>0.2.0</version>
+    <version>0.2.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <description>contributions which may or may not become part of the core or add-ons</description>
     <name>commercetools-contrib</name>
@@ -25,7 +25,7 @@
     <scm>
         <url>git@github.com:sphereio/commercetools-jvm-sdk-contrib.git</url>
         <connection>scm:git:git@github.com:sphereio/commercetools-jvm-sdk-contrib.git</connection>
-      <tag>commercetools-contrib-0.2.0</tag>
+      <tag>HEAD</tag>
   </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
