@@ -5,7 +5,7 @@
     <artifactId>commercetools-contrib</artifactId>
     <version>0.1.22-SNAPSHOT</version>
     <packaging>jar</packaging>
-
+    <description>contributions which may or may not become part of the core or add-ons</description>
     <name>commercetools-contrib</name>
     <url>https://github.com/sphereio/commercetools-jvm-sdk-contrib</url>
     <licenses>
