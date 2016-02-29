@@ -49,7 +49,7 @@ public final class SphereClientRule extends ExternalResource implements Blocking
 
     @Override
     protected void before() throws Throwable {
-        final File file = findFile(new File("integrationtest.properties"), 4);
+        final File file = findFile(new File("integrationtest.properties"), 10);
         try (final FileInputStream fileInputStream = new FileInputStream(file)) {
             final Properties properties = new Properties();
             properties.load(fileInputStream);
