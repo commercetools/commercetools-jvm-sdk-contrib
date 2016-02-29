@@ -49,13 +49,13 @@ public final class SphereClientRule extends ExternalResource implements Blocking
 
     @Override
     protected void before() throws Throwable {
-        System.err.println("current dir " + new File(".").getAbsolutePath());
-        try (final FileInputStream fileInputStream = new FileInputStream(new File("integrationtest.properties"))) {
-            final Properties properties = new Properties();
-            properties.load(fileInputStream);
-            final SphereClientConfig config =  SphereClientConfig.ofProperties(properties, "");
-            final SphereClient underlying = SphereClientFactory.of().createClient(config);
-            client = BlockingSphereClient.of(underlying, 20, TimeUnit.SECONDS);
-        }
+        throw new RuntimeException("current dir " + new File(".").getAbsolutePath());
+//        try (final FileInputStream fileInputStream = new FileInputStream(new File("integrationtest.properties"))) {
+//            final Properties properties = new Properties();
+//            properties.load(fileInputStream);
+//            final SphereClientConfig config =  SphereClientConfig.ofProperties(properties, "");
+//            final SphereClient underlying = SphereClientFactory.of().createClient(config);
+//            client = BlockingSphereClient.of(underlying, 20, TimeUnit.SECONDS);
+//        }
     }
 }
