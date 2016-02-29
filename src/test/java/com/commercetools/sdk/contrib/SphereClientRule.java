@@ -65,7 +65,7 @@ public final class SphereClientRule extends ExternalResource implements Blocking
         } else {
             final String name = initial.getName();
             final File parentFile = initial.getParentFile();
-            final File newInitial = new File(parentFile, name);
+            final File newInitial = new File(parentFile, name).getAbsoluteFile();
             return findFile(newInitial, ttl - 1);
         }
     }
