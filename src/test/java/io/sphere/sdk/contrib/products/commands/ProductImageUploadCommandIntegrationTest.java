@@ -42,7 +42,7 @@ public class ProductImageUploadCommandIntegrationTest {
         final Image image = product.getMasterData().getStaged().getMasterVariant().getImages().get(0);
         assertThat(image.getDimensions().getHeight()).isEqualTo(102);
         assertThat(image.getDimensions().getWidth()).isEqualTo(460);
-        assertThat(image.getUrl()).contains("foo");
+        assertThat(image.getUrl()).contains("logo");
     }
 
     private ProductType productType() {
