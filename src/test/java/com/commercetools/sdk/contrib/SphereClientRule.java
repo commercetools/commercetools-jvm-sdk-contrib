@@ -49,22 +49,21 @@ public final class SphereClientRule extends ExternalResource implements Blocking
 
     @Override
     protected void before() throws Throwable {
-        File file = new File("integrationtest.properties");
-        final File parentFile = new File(".").getParentFile();
-        if (!file.exists()
-                && parentFile !=null && parentFile.exists()
-                && parentFile.getParentFile() != null && parentFile.getParentFile().exists()
-                && parentFile.getParentFile().getParentFile() != null && parentFile.getParentFile().getParentFile().exists()
-                && parentFile.getParentFile().getParentFile().getParentFile() != null && parentFile.getParentFile().getParentFile().getParentFile().exists()
-                && new File(parentFile.getParentFile().getParentFile().getParentFile(), "integrationtest.properties").exists()) {
-            file = new File(parentFile.getParentFile().getParentFile().getParentFile(), "integrationtest.properties");
-        }
+        final File file = findFile(new File("integrationtest.properties"), 4);
         try (final FileInputStream fileInputStream = new FileInputStream(file)) {
             final Properties properties = new Properties();
             properties.load(fileInputStream);
             final SphereClientConfig config =  SphereClientConfig.ofProperties(properties, "");
             final SphereClient underlying = SphereClientFactory.of().createClient(config);
             client = BlockingSphereClient.of(underlying, 20, TimeUnit.SECONDS);
+        }
+    }
+
+    private static File findFile(final File initial, final int ttl) {
+        if (ttl <= 0 || !initial.exists()) {
+            return initial;
+        } else {
+            return findFile(new File(initial.getParent(), initial.getName()), ttl - 1);
         }
     }
 }
