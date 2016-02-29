@@ -49,6 +49,9 @@ public final class SphereClientRule extends ExternalResource implements Blocking
 
     @Override
     protected void before() throws Throwable {
+        if (!new File("integrationtest.properties").exists()) {
+            throw new RuntimeException("" + new File(".").getAbsolutePath());
+        }
         final File file = findFile(new File("integrationtest.properties"), 4);
         try (final FileInputStream fileInputStream = new FileInputStream(file)) {
             final Properties properties = new Properties();
