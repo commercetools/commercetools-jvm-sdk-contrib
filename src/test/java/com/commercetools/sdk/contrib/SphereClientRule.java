@@ -63,7 +63,10 @@ public final class SphereClientRule extends ExternalResource implements Blocking
         if (ttl <= 0 || initial.exists()) {
             return initial;
         } else {
-            return findFile(new File(initial.getParentFile().getAbsolutePath(), initial.getName()), ttl - 1);
+            final String name = initial.getName();
+            final String absolutePath = initial.getParentFile().getAbsolutePath();
+            final File newInitial = new File(absolutePath, name);
+            return findFile(newInitial, ttl - 1);
         }
     }
 }
