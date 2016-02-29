@@ -49,7 +49,9 @@ public final class SphereClientRule extends ExternalResource implements Blocking
 
     @Override
     protected void before() throws Throwable {
-        final String debugOutput = "current dir " + new File(".").getAbsolutePath() + " " + new File(".").getParentFile().getParentFile().getAbsolutePath();
+        final String debugOutput = "current dir "
+                + new File(".").getAbsolutePath()
+//              +  " " + new File(".").getParentFile().getParentFile().getAbsolutePath();
         throw new RuntimeException(debugOutput);
 
 //        File file = new File("integrationtest.properties");
