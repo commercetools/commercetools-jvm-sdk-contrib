@@ -55,8 +55,9 @@ public final class SphereClientRule extends ExternalResource implements Blocking
                 && parentFile !=null && parentFile.exists()
                 && parentFile.getParentFile() != null && parentFile.getParentFile().exists()
                 && parentFile.getParentFile().getParentFile() != null && parentFile.getParentFile().getParentFile().exists()
-                && new File(parentFile.getParentFile().getParentFile(), "integrationtest.properties").exists()) {
-            file = new File(parentFile.getParentFile().getParentFile(), "integrationtest.properties");
+                && parentFile.getParentFile().getParentFile().getParentFile() != null && parentFile.getParentFile().getParentFile().getParentFile().exists()
+                && new File(parentFile.getParentFile().getParentFile().getParentFile(), "integrationtest.properties").exists()) {
+            file = new File(parentFile.getParentFile().getParentFile().getParentFile(), "integrationtest.properties");
         }
         try (final FileInputStream fileInputStream = new FileInputStream(file)) {
             final Properties properties = new Properties();
