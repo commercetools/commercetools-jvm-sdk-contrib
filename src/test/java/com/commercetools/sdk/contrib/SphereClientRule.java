@@ -49,7 +49,7 @@ public final class SphereClientRule extends ExternalResource implements Blocking
 
     @Override
     protected void before() throws Throwable {
-        final File file = findFile(new File("integrationtest2.properties"), 10);
+        final File file = findFile(new File("integrationtest.properties"), 4);
         try (final FileInputStream fileInputStream = new FileInputStream(file)) {
             final Properties properties = new Properties();
             properties.load(fileInputStream);
@@ -60,7 +60,7 @@ public final class SphereClientRule extends ExternalResource implements Blocking
     }
 
     private static File findFile(final File initial, final int ttl) {
-        if (ttl <= 0 || !initial.exists()) {
+        if (ttl <= 0 || initial.exists()) {
             return initial;
         } else {
             return findFile(new File(initial.getParent(), initial.getName()), ttl - 1);
