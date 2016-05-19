@@ -7,8 +7,8 @@ modules contributed by external developers
 
 
 
-[travis]:https://travis-ci.org/commercetools-jvm-sdk-contrib
-[travis img]:https://travis-ci.org/sphereio/commercetools-jvm-sdk-contrib.svg?branch=master
+[travis]:https://travis-ci.org/commercetools/commercetools-jvm-sdk-contrib
+[travis img]:https://travis-ci.org/commercetools/commercetools-jvm-sdk-contrib.svg?branch=master
 
 [maven]:http://search.maven.org/#search|gav|1|g:"com.commercetools.sdk.jvm.contrib"%20AND%20a:"commercetools-contrib"
 [maven img]:https://maven-badges.herokuapp.com/maven-central/com.commercetools.sdk.jvm.contrib/commercetools-contrib/badge.svg
